@@ -6,6 +6,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Publications", href: "#publications" },
   { label: "Conferences", href: "#conferences" },
+  { label: "Projects", href: "#projects" },
   { label: "CV", href: "/docs/CV_MOMIER.pdf", external: true },
 ];
 
@@ -28,7 +29,8 @@ export default function Nav() {
         <a href="#top" className="font-semibold text-slate-900 hover:text-blue-700 transition-colors">
           R. Momier
         </a>
-        <div className="flex items-center gap-6">
+        {/* On a phone the links scroll sideways instead of running off the screen */}
+        <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto whitespace-nowrap">
           {links.map((link) => (
             <a
               key={link.href}
